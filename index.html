@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0813d45cb9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <form>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for a city..."
+                id="city-input"
+                autocomplete="off"
+                autofocus="on"
+              />
+              <input
+                class="btn btn-secondary"
+                type="submit"
+                id="search-button"
+                value="Search"
+              />
+              <input
+                class="btn btn-success ml-2"
+                type="button"
+                id="location-button"
+                value="Current"
+              />
+            </div>
+          </form>
+
+          <div class="row ml-2">
+            <h1>It's snowing in <span class="city"> Montreal</span></h1>
+          </div>
+          <div class="row ml-2 today">
+            <div class="col-3 large-icon-container">
+              <i class="far fa-snowflake"></i>
+            </div>
+            <div class="col-5 info">
+              <p class="date">Sunday November 1st</p>
+              <p class="time">9:45pm</p>
+              <p class="temp-today">
+                9
+
+                <a href="#" id="celcius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
+              </p>
+              <p>
+                high <span class="temp-high-low-today"> 21 ° / 25 °</span> low
+              </p>
+            </div>
+            <div class="col-4 percentages">
+              Feels like: <span id="feels"> 10° </span><br />
+              Humidity: <span id="humidity"> 60% </span><br />
+              Wind speed: <span id="wind"> 7km/hr</span><br />
+            </div>
+          </div>
+          <div class="container forecast">
+            <div class="row DOW">
+              <div class="col">Monday</div>
+              <div class="col">Tuesday</div>
+              <div class="col">Wednesday</div>
+              <div class="col">Thursday</div>
+              <div class="col">Friday</div>
+            </div>
+            <div class="row">
+              <div class="col"><i class="far fa-snowflake"></i></div>
+              <div class="col"><i class="far fa-sun"></i></div>
+              <div class="col"><i class="far fa-snowflake"></i></div>
+              <div class="col"><i class="far fa-sun"></i></div>
+              <div class="col"><i class="far fa-snowflake"></i></div>
+            </div>
+            <div class="row temps">
+              <div class="col">1° / 4°</div>
+              <div class="col">1° / 4°</div>
+              <div class="col">1° / 4°</div>
+              <div class="col">1° / 4°</div>
+              <div class="col">1° / 4°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+  <script src="script.js"></script>
+</html>
