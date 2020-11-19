@@ -51,18 +51,22 @@
           </form>
 
           <div class="row ml-2">
-            <h1>It's snowing in <span class="city"> Montreal</span></h1>
+            <h1> <span class="city"> Montreal</span> 
+            <ul>
+                <li>Last updated: <span id="lastupdate"></span></li>
+              <li id="description"></li>
+            </ul></h1>
           </div>
+
           <div class="row ml-2 today">
             <div class="col-3 large-icon-container">
-              <i class="far fa-snowflake"></i>
+              <img src="" alt="Clear" id="icon" class="float-left" />
+              
             </div>
             <div class="col-5 info">
-              <p class="date">Sunday November 1st</p>
-              <p class="time">9:45pm</p>
+              <!-- <p class="time">9:45pm</p> -->
               <p class="temp-today">
                 9
-
                 <a href="#" id="celcius">°C</a> |
                 <a href="#" id="fahrenheit">°F</a>
               </p>
@@ -111,3 +115,22 @@
 
   <script src="src/script.js"></script>
 </html>
+          <!-- <div class="row ml-2">
+            <h1>It's snowing in <span class="city"> Montreal</span></h1>
+          </div>
+          <div class="row ml-2 today">
+            <div class="col-3 large-icon-container">
+                <img src="src/snow.png" style="width: 100px;" />
+            </div>
+            
+              <br>
+              <p>
+                high <span class="temp-high-low-today"> 21 ° / 25 °</span> low
+              </p>
+            </div>
+            <div class="col-4 percentages">
+              Feels like: <span id="feels"> 10° </span><br />
+              Humidity: <span id="humidity"> 60% </span><br />
+              Wind speed: <span id="wind"> 7km/hr</span><br />
+            </div>
+          </div> -->
