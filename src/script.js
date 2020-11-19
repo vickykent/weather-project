@@ -33,9 +33,7 @@ function updateTime(now) {
     dateAbbreviation = "th";
   }
 
-  let currentDate = `${days[now.getDay()]} <br />${months[now.getMonth()]} ${
-    now.getDate() + dateAbbreviation
-  }`;
+  let currentDate = `${days[now.getDay()]}`;
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -49,8 +47,8 @@ function updateTime(now) {
   let date = document.querySelector(".date");
   let time = document.querySelector(".time");
 
-  date.innerHTML = currentDate;
-  time.innerHTML = currentTime;
+  lastupdate.innerHTML = `${currentDate} ${currentTime}`;
+  // time.innerHTML = currentTime;
 }
 
 let now = new Date();
@@ -62,7 +60,7 @@ function makeUpdates(response) {
   city.innerHTML = currentCity;
   let currentTemp = Math.round(response.data.main.temp);
   let temp = document.querySelector(".temp-today");
-  temp.innerHTML = `${currentTemp}°`;
+  temp.innerHTML = `${currentTemp} °C `;
   let currentLow = Math.round(response.data.main.temp_min);
   let currentHigh = Math.round(response.data.main.temp_max);
   let tempHighLow = document.querySelector(".temp-high-low-today");
@@ -73,9 +71,22 @@ function makeUpdates(response) {
   let currentHumidity = Math.round(response.data.main.humidity);
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${currentHumidity}%`;
+
   let currentWind = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${currentWind} km/hr`;
+
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+
+  lastupdateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  // iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function updateInputTemp(event) {
